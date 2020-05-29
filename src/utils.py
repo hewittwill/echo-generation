@@ -24,9 +24,9 @@ def gen_fig(inputs, generated, targets):
 
 def set_backend():
     from keras.optimizers import tf
-    cf = tf.ConfigProto()
+    cf = tf.compat.v1.ConfigProto()
     cf.gpu_options.allow_growth = True
-    sess = tf.Session(config=cf)
+    sess = tf.compat.v1.Session()
     K.set_session(sess)
 
 
